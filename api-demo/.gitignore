@@ -32,4 +32,8 @@
 .Spotlight-V100
 .Trashes
 ehthumbs.db
+<<<<<<< HEAD
 Thumbs.db
+=======
+Thumbs.db
+>>>>>>> branch 'master' of https://github.com/jumbadacom/JangleMockApi.git
