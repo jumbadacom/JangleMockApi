@@ -15,18 +15,26 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@JsonPropertyOrder({ "country_iso_code", "country_digit_code", "phone_no", "language" })
-public class PasswordRecoveryPhoneModel {
+@JsonPropertyOrder({ "country_iso_code", "country_digit_code",  "confirm_code", "phone_no", "language" })
+public class PhoneConfirmationModel {
 
 	@NotBlank
+	@NotNull
 	@JsonProperty(value = "country_iso_code")
 	private String countryISOCode;
 
+	@NotBlank
 	@NotNull
 	@JsonProperty(value = "country_digit_code")
-	private Integer countryDigitCode;
+	private String countryDigitCode;
+
+
+	@NotNull
+	@JsonProperty(value = "confirm_code")
+	private Integer confirmCode;
 
 	@NotBlank
+	@NotNull
 	@JsonProperty(value = "phone_no")
 	private String phoneNo;
 

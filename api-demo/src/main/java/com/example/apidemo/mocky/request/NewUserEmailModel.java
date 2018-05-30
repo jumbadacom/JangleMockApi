@@ -2,6 +2,7 @@ package com.example.apidemo.mocky.request;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import com.example.apidemo.mocky.Language;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -14,8 +15,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@JsonPropertyOrder({ "email", "language" })
-public class PasswordRecoveryEmailModel {
+@JsonPropertyOrder({ "device_unique", "email", "language" })
+public class NewUserEmailModel {
+	
+	@JsonProperty(value = "device_unique")
+	private String deviceUnique;
 
 	@NotBlank
 	@JsonProperty(value = "email")
@@ -24,4 +28,5 @@ public class PasswordRecoveryEmailModel {
 	@NotNull
 	@JsonProperty(value = "language")
 	private Language language;
+
 }

@@ -11,34 +11,35 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@JsonPropertyOrder({ "country_code", "phone_country_code", "phone_no", "confirm_code", "password", "language" })
-public class NewPassPhoneModel {
+@JsonPropertyOrder({ "country_iso_code", "country_digit_code", "phone_no", "confirm_code", "password", "language" })
+public class NewPasswordPhoneModel {
+	
+	@NotNull
+	@JsonProperty(value = "country_iso_code")
+	private String countryISOCode;
 
+	@NotBlank
+	@JsonProperty(value = "country_digit_code")
+	private String countryDigitCode;
+	
+	@NotBlank
+	@JsonProperty(value = "phone_no")
+	private String phoneNumber;
+	
 	@NotNull
 	@JsonProperty(value = "confirm_code")
 	private Integer confirmCode;
+
+
 	@NotBlank
-	@Size(max = 10)
-	@JsonProperty(value = "country_code")
-	private String countryCode;
+	@JsonProperty(value = "password")
+	private String password;
+
+	
 	@NotNull
 	@JsonProperty(value = "language")
 	private Language language;
-	@NotBlank
-	@Size(max = 21)
-	@JsonProperty(value = "password")
-	private String password;
-	@NotNull
-	@Size(max = 10)
-	@JsonProperty(value = "phone_country_code")
-	private String phoneCountryCode;
-	@NotBlank
-	@Size(max = 21)
-	@JsonProperty(value = "phone_no")
-	private String phoneNumber;
 }

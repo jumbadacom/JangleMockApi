@@ -10,10 +10,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.apidemo.mocky.request.NewPassEmailModel;
-import com.example.apidemo.mocky.request.NewPassPhoneModel;
-import com.example.apidemo.mocky.request.RecoveryEmailModel;
-import com.example.apidemo.mocky.request.RecoveryPasswordModel;
+import com.example.apidemo.mocky.request.NewPasswordEmailModel;
+import com.example.apidemo.mocky.request.NewPasswordPhoneModel;
+import com.example.apidemo.mocky.request.NewUserEmailModel;
+import com.example.apidemo.mocky.request.NewUserPhoneModel;
+import com.example.apidemo.mocky.request.PasswordRecoveryEmailModel;
+import com.example.apidemo.mocky.request.PasswordRecoveryPhoneModel;
+import com.example.apidemo.mocky.request.PhoneConfirmationModel;
+import com.example.apidemo.mocky.request.RegisterEmailModel;
+import com.example.apidemo.mocky.request.RegisterPhoneModel;
 import com.example.apidemo.mocky.request.SampleModel;
 import com.example.apidemo.mocky.response.ResponseBaseModel;
 
@@ -35,18 +40,18 @@ public class MockyController {
 		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
 	}
 	
-	@PostMapping(value = "/recover-pass-phone")
+	@PostMapping(value = "/password-recovery-phone")
 	public ResponseEntity<ResponseBaseModel> recoverPass(
-			@Valid @RequestBody RecoveryPasswordModel model) throws InterruptedException {
+			@Valid @RequestBody PasswordRecoveryPhoneModel model) throws InterruptedException {
 		log.info(model.toString());
 		Thread.sleep(SLEEP);
 		//return new ResponseBaseModel(LanguageMessages.VALIDATION_PHONE_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
 		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
 	}
 	
-	@PostMapping(value = "/recover-pass-email")
+	@PostMapping(value = "/password-recovery-email")
 	public ResponseEntity<ResponseBaseModel> recoverEmail(
-			@Valid @RequestBody RecoveryEmailModel model) throws InterruptedException {
+			@Valid @RequestBody PasswordRecoveryEmailModel model) throws InterruptedException {
 		log.info(model.toString());
 		Thread.sleep(SLEEP);
 		return new ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
@@ -54,9 +59,9 @@ public class MockyController {
 	}
 	
 	
-	@PostMapping(value = "/new-pass-email")
+	@PostMapping(value = "/new-password-email")
 	public ResponseEntity<ResponseBaseModel> newPassEmail(
-			@Valid @RequestBody NewPassEmailModel model) throws InterruptedException {
+			@Valid @RequestBody NewPasswordEmailModel model) throws InterruptedException {
 		log.info(model.toString());
 		Thread.sleep(SLEEP);
 		//return new ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
@@ -64,9 +69,54 @@ public class MockyController {
 	}
 	
 	
-	@PostMapping(value = "/new-pass-phone")
+	@PostMapping(value = "/new-password-phone")
 	public ResponseEntity<ResponseBaseModel> newPassPhone(
-			@Valid @RequestBody NewPassPhoneModel model) throws InterruptedException {
+			@Valid @RequestBody NewPasswordPhoneModel model) throws InterruptedException {
+		log.info(model.toString());
+		Thread.sleep(SLEEP);
+		//return new ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
+		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
+	}
+	
+	@PostMapping(value = "/new-user-email")
+	public ResponseEntity<ResponseBaseModel> newUserEmail(
+			@Valid @RequestBody NewUserEmailModel model) throws InterruptedException {
+		log.info(model.toString());
+		Thread.sleep(SLEEP);
+		//return new ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
+		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
+	}
+	
+	@PostMapping(value = "/new-user-phone")
+	public ResponseEntity<ResponseBaseModel> newUserPhone(
+			@Valid @RequestBody NewUserPhoneModel model) throws InterruptedException {
+		log.info(model.toString());
+		Thread.sleep(SLEEP);
+		//return new ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
+		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
+	}
+	
+	@PostMapping(value = "/phone-confirmation")
+	public ResponseEntity<ResponseBaseModel> phoneConfirmation(
+			@Valid @RequestBody PhoneConfirmationModel model) throws InterruptedException {
+		log.info(model.toString());
+		Thread.sleep(SLEEP);
+		//return new ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
+		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
+	}
+	
+	@PostMapping(value = "/register-email")
+	public ResponseEntity<ResponseBaseModel> registerEmail(
+			@Valid @RequestBody RegisterEmailModel model) throws InterruptedException {
+		log.info(model.toString());
+		Thread.sleep(SLEEP);
+		//return new ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
+		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
+	}
+	
+	@PostMapping(value = "/register-phone")
+	public ResponseEntity<ResponseBaseModel> registerPhone(
+			@Valid @RequestBody RegisterPhoneModel model) throws InterruptedException {
 		log.info(model.toString());
 		Thread.sleep(SLEEP);
 		//return new ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
