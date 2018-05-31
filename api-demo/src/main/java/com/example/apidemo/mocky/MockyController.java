@@ -31,7 +31,7 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 public class MockyController {
 	
-	private static final long SLEEP=4000;
+	private static final long SLEEP=500;
 	
 	@PostMapping(value = "/sample")
 	public ResponseEntity<ResponseBaseModel> sample(@Valid @RequestBody SampleModel model) throws InterruptedException {
