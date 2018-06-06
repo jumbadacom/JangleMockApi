@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.apidemo.mocky.request.NewPasswordEmailModel;
@@ -143,7 +144,8 @@ public class MockyController {
 	
 
 	@GetMapping(value = "/messages")
-	public ResponseEntity<ResponseBaseModel> getMessages() throws InterruptedException {
+	public ResponseEntity<ResponseBaseModel> getMessages(@RequestParam("userId") Integer id ) throws InterruptedException {
+		log.info(String.valueOf(id));
 		Thread.sleep(SLEEP);
 		//return new ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
 		return mockyService.getMessages();
