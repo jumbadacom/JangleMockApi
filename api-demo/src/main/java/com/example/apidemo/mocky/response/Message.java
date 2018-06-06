@@ -9,7 +9,7 @@ import lombok.EqualsAndHashCode;
 @JsonPropertyOrder({
 "imageURL",
 "username",
-"messsageType",
+"messageType",
 "messageText",
 "messagesCount",
 "time"
@@ -17,13 +17,14 @@ import lombok.EqualsAndHashCode;
 @Data
 public class Message {
 	
-
+	@JsonProperty("messageId")
+	private Integer messageId;
 @JsonProperty("imageURL")
 private String imageURL;
 @JsonProperty("username")
 private String username;
-@JsonProperty("messsageType")
-private String messsageType;
+@JsonProperty("messageType")
+private String messageType;
 @JsonProperty("messageText")
 private String messageText;
 @JsonProperty("messagesCount")

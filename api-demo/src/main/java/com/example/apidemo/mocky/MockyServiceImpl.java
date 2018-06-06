@@ -23,22 +23,23 @@ public class MockyServiceImpl implements  MockyService {
 		List<Message> messages=new ArrayList<>();
 		for (int i=1;i<16;i++) {
 			Message message=new Message();
+			message.setMessageId(10000+i);
 			message.setImageURL("http://");
 			message.setTime(i+"s");
 			message.setMessagesCount(0);
 			if(i%3==0) {
-				message.setMesssageType("TAIL");
+				message.setMessageType("TAIL");
 				message.setMessageText("Tamamlama paylaştı");
 				message.setUsername("@user-"+i);
 							}
 			else if(i%3==1) {
-				message.setMesssageType("JANGLE");
+				message.setMessageType("JANGLE");
 				message.setMessageText("Jangle paylaştı");
 				message.setUsername("@username"+i);
 			
 			}
 			else {
-				message.setMesssageType("CHAT");
+				message.setMessageType("CHAT");
 				message.setMessageText("Deneme mesaj test");
 				message.setUsername("@user_"+i);
 				message.setMessagesCount((int)Math.round(5)+i);
