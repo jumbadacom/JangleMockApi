@@ -36,6 +36,20 @@ public class ResponseBaseModel {
 		setShowToUser(true);
 		// setResponseTime(LocalDateTime.now(Clock.systemUTC()));
 	};
+	
+	
+	
+	//region DENEME
+	
+	public ResponseBaseModel(LanguageMessages languageMessages, Language language, String customMessage) {
+		setResponseCode(languageMessages.getCode());
+		setResponseMessage(customMessage);
+		setShowToUser(true);
+	}
+	
+	//endregion
+	
+	
 
 	public ResponseEntity<ResponseBaseModel> generateInvisible(HttpStatus status) {
 		setShowToUser(false);

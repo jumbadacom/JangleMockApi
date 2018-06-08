@@ -24,6 +24,7 @@ import com.example.apidemo.mocky.request.RegisterEmailModel;
 import com.example.apidemo.mocky.request.RegisterImageModel;
 import com.example.apidemo.mocky.request.RegisterPhoneModel;
 import com.example.apidemo.mocky.request.SampleModel;
+import com.example.apidemo.mocky.request.SettingsModel;
 import com.example.apidemo.mocky.response.ResponseBaseModel;
 
 import lombok.extern.slf4j.Slf4j;
@@ -161,18 +162,25 @@ public class MockyController {
 	}
 
 	@PostMapping(value = "/settings-main-private-account")
-	public ResponseEntity<ResponseBaseModel> settingsMainPrivateAccount(@Valid @RequestBody RegisterImageModel model)
+	public ResponseEntity<ResponseBaseModel> settingsMainPrivateAccount(@Valid @RequestBody SettingsModel model)
 			throws InterruptedException {
 		log.info(model.toString());
 		Thread.sleep(SLEEP);
 		// return new
 		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
-		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
+		
+		
+		// TODO: 2 parametreli olanı değil de 3 parametreli custom message'lı constructor'ı deniyorum. Değiştireceğim. "Ayarlarınız başarıyla kaydedildi" falan yazacak.
+		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, 
+				model.getLanguage(),
+				(model.isEnabled() == true) ? "başarıyla true olarak set edildi." : "başarıyla false olarak set edildi.")
+				
+				.generateInvisible(HttpStatus.OK);
 	}
 
 	@PostMapping(value = "/settings-main-disable-incoming-messages")
 	public ResponseEntity<ResponseBaseModel> settingsMainDisableIncomingMessages(
-			@Valid @RequestBody RegisterImageModel model) throws InterruptedException {
+			@Valid @RequestBody SettingsModel model) throws InterruptedException {
 		log.info(model.toString());
 		Thread.sleep(SLEEP);
 		// return new
@@ -181,7 +189,7 @@ public class MockyController {
 	}
 
 	@PostMapping(value = "/settings-main-hide-read-info")
-	public ResponseEntity<ResponseBaseModel> settingsMainHideReadInfo(@Valid @RequestBody RegisterImageModel model)
+	public ResponseEntity<ResponseBaseModel> settingsMainHideReadInfo(@Valid @RequestBody SettingsModel model)
 			throws InterruptedException {
 		log.info(model.toString());
 		Thread.sleep(SLEEP);
@@ -192,7 +200,7 @@ public class MockyController {
 
 	@PostMapping(value = "/settings-notifications-following-voted")
 	public ResponseEntity<ResponseBaseModel> settingsNotificationsFollowingVoted(
-			@Valid @RequestBody RegisterImageModel model) throws InterruptedException {
+			@Valid @RequestBody SettingsModel model) throws InterruptedException {
 		log.info(model.toString());
 		Thread.sleep(SLEEP);
 		// return new
@@ -202,7 +210,7 @@ public class MockyController {
 
 	@PostMapping(value = "/settings-notifications-following-likes")
 	public ResponseEntity<ResponseBaseModel> settingsNotificationsFollowingLikes(
-			@Valid @RequestBody RegisterImageModel model) throws InterruptedException {
+			@Valid @RequestBody SettingsModel model) throws InterruptedException {
 		log.info(model.toString());
 		Thread.sleep(SLEEP);
 		// return new
@@ -212,7 +220,7 @@ public class MockyController {
 
 	@PostMapping(value = "/settings-notifications-following-jangle")
 	public ResponseEntity<ResponseBaseModel> settingsNotificationsFollowingJangle(
-			@Valid @RequestBody RegisterImageModel model) throws InterruptedException {
+			@Valid @RequestBody SettingsModel model) throws InterruptedException {
 		log.info(model.toString());
 		Thread.sleep(SLEEP);
 		// return new
@@ -222,7 +230,7 @@ public class MockyController {
 
 	@PostMapping(value = "/settings-notifications-not-following-voted")
 	public ResponseEntity<ResponseBaseModel> settingsNotificationsNotFollowingVoted(
-			@Valid @RequestBody RegisterImageModel model) throws InterruptedException {
+			@Valid @RequestBody SettingsModel model) throws InterruptedException {
 		log.info(model.toString());
 		Thread.sleep(SLEEP);
 		// return new
@@ -232,7 +240,7 @@ public class MockyController {
 
 	@PostMapping(value = "/settings-notifications-not-following-Likes")
 	public ResponseEntity<ResponseBaseModel> settingsNotificationsNotFollowingLikes(
-			@Valid @RequestBody RegisterImageModel model) throws InterruptedException {
+			@Valid @RequestBody SettingsModel model) throws InterruptedException {
 		log.info(model.toString());
 		Thread.sleep(SLEEP);
 		// return new
@@ -242,7 +250,7 @@ public class MockyController {
 
 	@PostMapping(value = "/settings-notifications-not-following-follow")
 	public ResponseEntity<ResponseBaseModel> settingsNotificationsNotFollowingFollow(
-			@Valid @RequestBody RegisterImageModel model) throws InterruptedException {
+			@Valid @RequestBody SettingsModel model) throws InterruptedException {
 		log.info(model.toString());
 		Thread.sleep(SLEEP);
 		// return new
@@ -252,7 +260,7 @@ public class MockyController {
 
 	@PostMapping(value = "/settings-notifications-email-and-sms-jangle-news")
 	public ResponseEntity<ResponseBaseModel> settingsNotificationsEmainAndSMSJangleNews(
-			@Valid @RequestBody RegisterImageModel model) throws InterruptedException {
+			@Valid @RequestBody SettingsModel model) throws InterruptedException {
 		log.info(model.toString());
 		Thread.sleep(SLEEP);
 		// return new
@@ -262,7 +270,7 @@ public class MockyController {
 
 	@PostMapping(value = "/settings-notifications-email-and-sms-jangle-interactions")
 	public ResponseEntity<ResponseBaseModel> settingsNotificationsEmainAndSMSJangleInteractions(
-			@Valid @RequestBody RegisterImageModel model) throws InterruptedException {
+			@Valid @RequestBody SettingsModel model) throws InterruptedException {
 		log.info(model.toString());
 		Thread.sleep(SLEEP);
 		// return new
