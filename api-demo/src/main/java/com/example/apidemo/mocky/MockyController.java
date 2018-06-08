@@ -28,127 +28,246 @@ import com.example.apidemo.mocky.response.ResponseBaseModel;
 
 import lombok.extern.slf4j.Slf4j;
 
-
 @Slf4j
 @RequestMapping(value = "api/entry")
 @RestController
 public class MockyController {
-	
+
 	private final MockyService mockyService;
 
 	public MockyController(MockyService mockyService) {
 		this.mockyService = mockyService;
 	}
-	
-	private static final long SLEEP=500;
-	
+
+	private static final long SLEEP = 500;
+
 	@PostMapping(value = "/sample")
 	public ResponseEntity<ResponseBaseModel> sample(@Valid @RequestBody SampleModel model) throws InterruptedException {
 		log.info(model.toString());
 		Thread.sleep(SLEEP);
-		//return new ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
+		// return new
+		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
 		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
 	}
-	
+
 	@PostMapping(value = "/password-recovery-phone")
-	public ResponseEntity<ResponseBaseModel> recoverPass(
-			@Valid @RequestBody PasswordRecoveryPhoneModel model) throws InterruptedException {
+	public ResponseEntity<ResponseBaseModel> recoverPass(@Valid @RequestBody PasswordRecoveryPhoneModel model)
+			throws InterruptedException {
 		log.info(model.toString());
 		Thread.sleep(SLEEP);
-		//return new ResponseBaseModel(LanguageMessages.VALIDATION_PHONE_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
+		// return new
+		// ResponseBaseModel(LanguageMessages.VALIDATION_PHONE_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
 		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
 	}
-	
+
 	@PostMapping(value = "/password-recovery-email")
-	public ResponseEntity<ResponseBaseModel> recoverEmail(
-			@Valid @RequestBody PasswordRecoveryEmailModel model) throws InterruptedException {
+	public ResponseEntity<ResponseBaseModel> recoverEmail(@Valid @RequestBody PasswordRecoveryEmailModel model)
+			throws InterruptedException {
 		log.info(model.toString());
 		Thread.sleep(SLEEP);
-		//return new ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
+		// return new
+		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
 		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
 	}
-	
-	
+
 	@PostMapping(value = "/new-password-email")
-	public ResponseEntity<ResponseBaseModel> newPassEmail(
-			@Valid @RequestBody NewPasswordEmailModel model) throws InterruptedException {
+	public ResponseEntity<ResponseBaseModel> newPassEmail(@Valid @RequestBody NewPasswordEmailModel model)
+			throws InterruptedException {
 		log.info(model.toString());
 		Thread.sleep(SLEEP);
-		//return new ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
+		// return new
+		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
 		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
 	}
-	
-	
+
 	@PostMapping(value = "/new-password-phone")
-	public ResponseEntity<ResponseBaseModel> newPassPhone(
-			@Valid @RequestBody NewPasswordPhoneModel model) throws InterruptedException {
+	public ResponseEntity<ResponseBaseModel> newPassPhone(@Valid @RequestBody NewPasswordPhoneModel model)
+			throws InterruptedException {
 		log.info(model.toString());
 		Thread.sleep(SLEEP);
-		//return new ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
+		// return new
+		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
 		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
 	}
-	
+
 	@PostMapping(value = "/new-user-email")
-	public ResponseEntity<ResponseBaseModel> newUserEmail(
-			@Valid @RequestBody NewUserEmailModel model) throws InterruptedException {
+	public ResponseEntity<ResponseBaseModel> newUserEmail(@Valid @RequestBody NewUserEmailModel model)
+			throws InterruptedException {
 		log.info(model.toString());
 		Thread.sleep(SLEEP);
-		//return new ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
+		// return new
+		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
 		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
 	}
-	
+
 	@PostMapping(value = "/new-user-phone")
-	public ResponseEntity<ResponseBaseModel> newUserPhone(
-			@Valid @RequestBody NewUserPhoneModel model) throws InterruptedException {
+	public ResponseEntity<ResponseBaseModel> newUserPhone(@Valid @RequestBody NewUserPhoneModel model)
+			throws InterruptedException {
 		log.info(model.toString());
 		Thread.sleep(SLEEP);
-		//return new ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
+		// return new
+		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
 		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
 	}
-	
+
 	@PostMapping(value = "/phone-confirmation")
-	public ResponseEntity<ResponseBaseModel> phoneConfirmation(
-			@Valid @RequestBody PhoneConfirmationModel model) throws InterruptedException {
+	public ResponseEntity<ResponseBaseModel> phoneConfirmation(@Valid @RequestBody PhoneConfirmationModel model)
+			throws InterruptedException {
 		log.info(model.toString());
 		Thread.sleep(SLEEP);
-		//return new ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
+		// return new
+		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
 		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
 	}
-	
+
 	@PostMapping(value = "/register-email")
-	public ResponseEntity<ResponseBaseModel> registerEmail(
-			@Valid @RequestBody RegisterEmailModel model) throws InterruptedException {
+	public ResponseEntity<ResponseBaseModel> registerEmail(@Valid @RequestBody RegisterEmailModel model)
+			throws InterruptedException {
 		log.info(model.toString());
 		Thread.sleep(SLEEP);
-		//return new ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
+		// return new
+		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
 		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
 	}
-	
+
 	@PostMapping(value = "/register-phone")
-	public ResponseEntity<ResponseBaseModel> registerPhone(
-			@Valid @RequestBody RegisterPhoneModel model) throws InterruptedException {
+	public ResponseEntity<ResponseBaseModel> registerPhone(@Valid @RequestBody RegisterPhoneModel model)
+			throws InterruptedException {
 		log.info(model.toString());
 		Thread.sleep(SLEEP);
-		//return new ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
+		// return new
+		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
 		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
 	}
-	
+
 	@PostMapping(value = "/register-image")
-	public ResponseEntity<ResponseBaseModel> registerPhone(
+	public ResponseEntity<ResponseBaseModel> registerImage(@Valid @RequestBody RegisterImageModel model)
+			throws InterruptedException {
+		log.info(model.toString());
+		Thread.sleep(SLEEP);
+		// return new
+		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
+		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
+	}
+
+	@GetMapping(value = "/messages")
+	public ResponseEntity<ResponseBaseModel> getMessages(@RequestParam("userId") Integer id)
+			throws InterruptedException {
+		log.info(String.valueOf(id));
+		Thread.sleep(SLEEP);
+		// return new
+		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
+		return mockyService.getMessages();
+	}
+
+	@PostMapping(value = "/settings-main-private-account")
+	public ResponseEntity<ResponseBaseModel> settingsMainPrivateAccount(@Valid @RequestBody RegisterImageModel model)
+			throws InterruptedException {
+		log.info(model.toString());
+		Thread.sleep(SLEEP);
+		// return new
+		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
+		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
+	}
+
+	@PostMapping(value = "/settings-main-disable-incoming-messages")
+	public ResponseEntity<ResponseBaseModel> settingsMainDisableIncomingMessages(
 			@Valid @RequestBody RegisterImageModel model) throws InterruptedException {
 		log.info(model.toString());
 		Thread.sleep(SLEEP);
-		//return new ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
+		// return new
+		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
 		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
 	}
-	
 
-	@GetMapping(value = "/messages")
-	public ResponseEntity<ResponseBaseModel> getMessages(@RequestParam("userId") Integer id ) throws InterruptedException {
-		log.info(String.valueOf(id));
+	@PostMapping(value = "/settings-main-hide-read-ingo")
+	public ResponseEntity<ResponseBaseModel> settingsMainHideReadInfo(@Valid @RequestBody RegisterImageModel model)
+			throws InterruptedException {
+		log.info(model.toString());
 		Thread.sleep(SLEEP);
-		//return new ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
-		return mockyService.getMessages();
+		// return new
+		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
+		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
 	}
-	
+
+	@PostMapping(value = "/settings-notifications-following-voted")
+	public ResponseEntity<ResponseBaseModel> settingsNotificationsFollowingVoted(
+			@Valid @RequestBody RegisterImageModel model) throws InterruptedException {
+		log.info(model.toString());
+		Thread.sleep(SLEEP);
+		// return new
+		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
+		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
+	}
+
+	@PostMapping(value = "/settings-notifications-following-likes")
+	public ResponseEntity<ResponseBaseModel> settingsNotificationsFollowingLikes(
+			@Valid @RequestBody RegisterImageModel model) throws InterruptedException {
+		log.info(model.toString());
+		Thread.sleep(SLEEP);
+		// return new
+		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
+		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
+	}
+
+	@PostMapping(value = "/settings-notifications-following-jangle")
+	public ResponseEntity<ResponseBaseModel> settingsNotificationsFollowingJangle(
+			@Valid @RequestBody RegisterImageModel model) throws InterruptedException {
+		log.info(model.toString());
+		Thread.sleep(SLEEP);
+		// return new
+		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
+		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
+	}
+
+	@PostMapping(value = "/settings-notifications-not-following-jangle")
+	public ResponseEntity<ResponseBaseModel> settingsNotificationsNotFollowingVoted(
+			@Valid @RequestBody RegisterImageModel model) throws InterruptedException {
+		log.info(model.toString());
+		Thread.sleep(SLEEP);
+		// return new
+		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
+		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
+	}
+
+	@PostMapping(value = "/settings-notifications-not-following-jangle")
+	public ResponseEntity<ResponseBaseModel> settingsNotificationsNotFollowingLikes(
+			@Valid @RequestBody RegisterImageModel model) throws InterruptedException {
+		log.info(model.toString());
+		Thread.sleep(SLEEP);
+		// return new
+		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
+		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
+	}
+
+	@PostMapping(value = "/settings-notifications-not-following-follow")
+	public ResponseEntity<ResponseBaseModel> settingsNotificationsNotFollowingFollow(
+			@Valid @RequestBody RegisterImageModel model) throws InterruptedException {
+		log.info(model.toString());
+		Thread.sleep(SLEEP);
+		// return new
+		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
+		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
+	}
+
+	@PostMapping(value = "/settings-notifications-email-and-sms-jangle-news")
+	public ResponseEntity<ResponseBaseModel> settingsNotificationsEmainAndSMSJangleNews(
+			@Valid @RequestBody RegisterImageModel model) throws InterruptedException {
+		log.info(model.toString());
+		Thread.sleep(SLEEP);
+		// return new
+		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
+		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
+	}
+
+	@PostMapping(value = "/settings-notifications-email-and-sms-jangle-interactions")
+	public ResponseEntity<ResponseBaseModel> settingsNotificationsEmainAndSMSJangleInteractions(
+			@Valid @RequestBody RegisterImageModel model) throws InterruptedException {
+		log.info(model.toString());
+		Thread.sleep(SLEEP);
+		// return new
+		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
+		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
+	}
+
 }
