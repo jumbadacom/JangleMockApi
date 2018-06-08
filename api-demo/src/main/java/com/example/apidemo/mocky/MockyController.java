@@ -180,7 +180,7 @@ public class MockyController {
 		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
 	}
 
-	@PostMapping(value = "/settings-main-hide-read-ingo")
+	@PostMapping(value = "/settings-main-hide-read-info")
 	public ResponseEntity<ResponseBaseModel> settingsMainHideReadInfo(@Valid @RequestBody RegisterImageModel model)
 			throws InterruptedException {
 		log.info(model.toString());
