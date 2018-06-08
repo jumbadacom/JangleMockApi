@@ -220,7 +220,7 @@ public class MockyController {
 		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
 	}
 
-	@PostMapping(value = "/settings-notifications-not-following-jangle")
+	@PostMapping(value = "/settings-notifications-not-following-voted")
 	public ResponseEntity<ResponseBaseModel> settingsNotificationsNotFollowingVoted(
 			@Valid @RequestBody RegisterImageModel model) throws InterruptedException {
 		log.info(model.toString());
@@ -230,7 +230,7 @@ public class MockyController {
 		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
 	}
 
-	@PostMapping(value = "/settings-notifications-not-following-jangle")
+	@PostMapping(value = "/settings-notifications-not-following-Likes")
 	public ResponseEntity<ResponseBaseModel> settingsNotificationsNotFollowingLikes(
 			@Valid @RequestBody RegisterImageModel model) throws InterruptedException {
 		log.info(model.toString());
