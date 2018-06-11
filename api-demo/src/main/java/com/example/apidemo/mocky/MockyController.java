@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.apidemo.mocky.request.LoginModel;
 import com.example.apidemo.mocky.request.NewPasswordEmailModel;
 import com.example.apidemo.mocky.request.NewPasswordPhoneModel;
 import com.example.apidemo.mocky.request.NewUserEmailModel;
@@ -41,6 +42,15 @@ public class MockyController {
 	}
 
 	private static final long SLEEP = 500;
+	
+	@PostMapping(value = "/login")
+	public ResponseEntity<ResponseBaseModel> login(@Valid @RequestBody LoginModel model) throws InterruptedException {
+		log.info(model.toString());
+		Thread.sleep(SLEEP);
+		// return new
+		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
+		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
+	}
 
 	@PostMapping(value = "/sample")
 	public ResponseEntity<ResponseBaseModel> sample(@Valid @RequestBody SampleModel model) throws InterruptedException {
