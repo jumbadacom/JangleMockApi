@@ -168,14 +168,9 @@ public class MockyController {
 		Thread.sleep(SLEEP);
 		// return new
 		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
-		
-		
-		// TODO: 2 parametreli olanı değil de 3 parametreli custom message'lı constructor'ı deniyorum. Değiştireceğim. "Ayarlarınız başarıyla kaydedildi" falan yazacak.
-		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, 
-				model.getLanguage(),
-				(model.isEnabled() == true) ? "başarıyla true olarak set edildi." : "başarıyla false olarak set edildi.")
-				
-				.generateInvisible(HttpStatus.OK);
+
+		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
+
 	}
 
 	@PostMapping(value = "/settings-main-disable-incoming-messages")
