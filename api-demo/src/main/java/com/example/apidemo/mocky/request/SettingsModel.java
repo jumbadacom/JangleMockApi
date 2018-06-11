@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@JsonPropertyOrder({ "user_id", "is_enabled", "language" })
+@JsonPropertyOrder({ "user_id", "is_enabled" })
 public class SettingsModel {
 
 	@NotNull
@@ -24,9 +24,5 @@ public class SettingsModel {
 
 	@JsonProperty(value = "is_enabled")
 	private boolean isEnabled;
-	
-	@NotNull
-	@JsonProperty(value = "language")
-	private Language language;
 
 }

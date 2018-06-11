@@ -169,7 +169,7 @@ public class MockyController {
 		// return new
 		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
 
-		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
+		return new ResponseBaseModel(LanguageMessages.SUCCESFUL).generateInvisible(HttpStatus.OK);
 
 	}
 
@@ -180,7 +180,7 @@ public class MockyController {
 		Thread.sleep(SLEEP);
 		// return new
 		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
-		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
+		return new ResponseBaseModel(LanguageMessages.SUCCESFUL).generateInvisible(HttpStatus.OK);
 	}
 
 	@PostMapping(value = "/settings-main-hide-read-info")
@@ -190,7 +190,7 @@ public class MockyController {
 		Thread.sleep(SLEEP);
 		// return new
 		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
-		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
+		return new ResponseBaseModel(LanguageMessages.SUCCESFUL).generateInvisible(HttpStatus.OK);
 	}
 
 	@PostMapping(value = "/settings-notifications-following-voted")
@@ -200,7 +200,7 @@ public class MockyController {
 		Thread.sleep(SLEEP);
 		// return new
 		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
-		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
+		return new ResponseBaseModel(LanguageMessages.SUCCESFUL).generateInvisible(HttpStatus.OK);
 	}
 
 	@PostMapping(value = "/settings-notifications-following-likes")
@@ -210,7 +210,7 @@ public class MockyController {
 		Thread.sleep(SLEEP);
 		// return new
 		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
-		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
+		return new ResponseBaseModel(LanguageMessages.SUCCESFUL).generateInvisible(HttpStatus.OK);
 	}
 
 	@PostMapping(value = "/settings-notifications-following-jangle")
@@ -220,7 +220,7 @@ public class MockyController {
 		Thread.sleep(SLEEP);
 		// return new
 		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
-		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
+		return new ResponseBaseModel(LanguageMessages.SUCCESFUL).generateInvisible(HttpStatus.OK);
 	}
 
 	@PostMapping(value = "/settings-notifications-not-following-voted")
@@ -230,7 +230,7 @@ public class MockyController {
 		Thread.sleep(SLEEP);
 		// return new
 		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
-		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
+		return new ResponseBaseModel(LanguageMessages.SUCCESFUL).generateInvisible(HttpStatus.OK);
 	}
 
 	@PostMapping(value = "/settings-notifications-not-following-Likes")
@@ -240,7 +240,7 @@ public class MockyController {
 		Thread.sleep(SLEEP);
 		// return new
 		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
-		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
+		return new ResponseBaseModel(LanguageMessages.SUCCESFUL).generateInvisible(HttpStatus.OK);
 	}
 
 	@PostMapping(value = "/settings-notifications-not-following-follow")
@@ -250,7 +250,7 @@ public class MockyController {
 		Thread.sleep(SLEEP);
 		// return new
 		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
-		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
+		return new ResponseBaseModel(LanguageMessages.SUCCESFUL).generateInvisible(HttpStatus.OK);
 	}
 
 	@PostMapping(value = "/settings-notifications-email-and-sms-jangle-news")
@@ -260,7 +260,7 @@ public class MockyController {
 		Thread.sleep(SLEEP);
 		// return new
 		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
-		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
+		return new ResponseBaseModel(LanguageMessages.SUCCESFUL).generateInvisible(HttpStatus.OK);
 	}
 
 	@PostMapping(value = "/settings-notifications-email-and-sms-jangle-interactions")
@@ -270,7 +270,7 @@ public class MockyController {
 		Thread.sleep(SLEEP);
 		// return new
 		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
-		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
+		return new ResponseBaseModel(LanguageMessages.SUCCESFUL).generateInvisible(HttpStatus.OK);
 	}
 
 }

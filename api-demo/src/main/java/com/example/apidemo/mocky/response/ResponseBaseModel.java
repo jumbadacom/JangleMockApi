@@ -27,7 +27,7 @@ public class ResponseBaseModel {
 	private boolean showToUser;
 
 	public ResponseBaseModel(LanguageMessages languageMessages) {
-		new ResponseBaseModel(languageMessages);
+		new ResponseBaseModel(languageMessages, Language.EN_US);
 	};
 
 	public ResponseBaseModel(LanguageMessages languageMessages, Language language) {
