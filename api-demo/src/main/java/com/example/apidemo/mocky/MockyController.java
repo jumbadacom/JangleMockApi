@@ -48,7 +48,7 @@ public class MockyController {
 		Thread.sleep(SLEEP);
 		// return new
 		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
-		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
+		return new ResponseBaseModel(LanguageMessages.SUCCESFUL).generateInvisible(HttpStatus.OK);
 	}
 
 	@PostMapping(value = "/password-recovery-phone")
@@ -58,7 +58,7 @@ public class MockyController {
 		Thread.sleep(SLEEP);
 		// return new
 		// ResponseBaseModel(LanguageMessages.VALIDATION_PHONE_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
-		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
+		return new ResponseBaseModel(LanguageMessages.SUCCESFUL).generateInvisible(HttpStatus.OK);
 	}
 
 	@PostMapping(value = "/password-recovery-email")
@@ -68,7 +68,7 @@ public class MockyController {
 		Thread.sleep(SLEEP);
 		// return new
 		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
-		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
+		return new ResponseBaseModel(LanguageMessages.SUCCESFUL).generateInvisible(HttpStatus.OK);
 	}
 
 	@PostMapping(value = "/new-password-email")
@@ -78,7 +78,7 @@ public class MockyController {
 		Thread.sleep(SLEEP);
 		// return new
 		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
-		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
+		return new ResponseBaseModel(LanguageMessages.SUCCESFUL).generateInvisible(HttpStatus.OK);
 	}
 
 	@PostMapping(value = "/new-password-phone")
@@ -88,7 +88,7 @@ public class MockyController {
 		Thread.sleep(SLEEP);
 		// return new
 		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
-		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
+		return new ResponseBaseModel(LanguageMessages.SUCCESFUL).generateInvisible(HttpStatus.OK);
 	}
 
 	@PostMapping(value = "/new-user-email")
@@ -98,7 +98,7 @@ public class MockyController {
 		Thread.sleep(SLEEP);
 		// return new
 		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
-		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
+		return new ResponseBaseModel(LanguageMessages.SUCCESFUL).generateInvisible(HttpStatus.OK);
 	}
 
 	@PostMapping(value = "/new-user-phone")
@@ -128,7 +128,7 @@ public class MockyController {
 		Thread.sleep(SLEEP);
 		// return new
 		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
-		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
+		return new ResponseBaseModel(LanguageMessages.SUCCESFUL).generateInvisible(HttpStatus.OK);
 	}
 
 	@PostMapping(value = "/register-phone")
@@ -138,7 +138,7 @@ public class MockyController {
 		Thread.sleep(SLEEP);
 		// return new
 		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
-		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
+		return new ResponseBaseModel(LanguageMessages.SUCCESFUL).generateInvisible(HttpStatus.OK);
 	}
 
 	@PostMapping(value = "/register-image")
@@ -148,7 +148,7 @@ public class MockyController {
 		Thread.sleep(SLEEP);
 		// return new
 		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
-		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
+		return new ResponseBaseModel(LanguageMessages.SUCCESFUL).generateInvisible(HttpStatus.OK);
 	}
 
 	@GetMapping(value = "/messages")
