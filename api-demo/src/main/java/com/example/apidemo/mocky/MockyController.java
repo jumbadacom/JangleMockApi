@@ -118,7 +118,7 @@ public class MockyController {
 		Thread.sleep(SLEEP);
 		// return new
 		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
-		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
+		return new ResponseBaseModel(LanguageMessages.SUCCESFUL).generateInvisible(HttpStatus.OK);
 	}
 
 	@PostMapping(value = "/phone-confirmation")
@@ -128,7 +128,7 @@ public class MockyController {
 		Thread.sleep(SLEEP);
 		// return new
 		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
-		return new ResponseBaseModel(LanguageMessages.SUCCESFUL, model.getLanguage()).generateInvisible(HttpStatus.OK);
+		return new ResponseBaseModel(LanguageMessages.SUCCESFUL).generateInvisible(HttpStatus.OK);
 	}
 
 	@PostMapping(value = "/register-email")
