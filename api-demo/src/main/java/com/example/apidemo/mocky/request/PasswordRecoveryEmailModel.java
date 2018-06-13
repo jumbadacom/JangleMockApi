@@ -14,14 +14,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@JsonPropertyOrder({ "email", "language" })
+@JsonPropertyOrder({ "email" })
 public class PasswordRecoveryEmailModel {
 
 	@NotBlank
 	@JsonProperty(value = "email")
 	private String email;
-
-	@NotNull
-	@JsonProperty(value = "language")
-	private Language language;
 }

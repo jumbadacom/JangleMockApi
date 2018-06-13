@@ -21,8 +21,4 @@ public class RegisterImageModel {
 	@NotBlank
 	@JsonProperty("image_string")
 	private String imageString;
-
-	@NotNull
-	@JsonProperty(value = "language")
-	private Language language;
 }

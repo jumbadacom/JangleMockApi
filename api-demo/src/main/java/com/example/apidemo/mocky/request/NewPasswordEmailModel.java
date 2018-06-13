@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@JsonPropertyOrder({ "email", "confirm_code", "password", "language" })
+@JsonPropertyOrder({ "email", "confirm_code", "password" })
 public class NewPasswordEmailModel {
 
 	@NotBlank
@@ -29,9 +29,5 @@ public class NewPasswordEmailModel {
 	@NotBlank
 	@JsonProperty(value = "password")
 	private String password;
-
-	@NotNull
-	@JsonProperty(value = "language")
-	private Language language;
 
 }

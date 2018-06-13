@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@JsonPropertyOrder({ "device_unique", "email", "language" })
+@JsonPropertyOrder({ "device_unique", "email" })
 public class NewUserEmailModel {
 	
 	@JsonProperty(value = "device_unique")
@@ -24,9 +24,5 @@ public class NewUserEmailModel {
 	@NotBlank
 	@JsonProperty(value = "email")
 	private String email;
-
-	@NotNull
-	@JsonProperty(value = "language")
-	private Language language;
 
 }
