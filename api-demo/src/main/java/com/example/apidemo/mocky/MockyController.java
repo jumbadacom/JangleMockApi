@@ -174,6 +174,7 @@ public class MockyController {
 		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
 		return mockyService.getMessages();
 	}
+	
 
 	@GetMapping(value = "/messages/{id}")
 	public ResponseEntity<ResponseBaseModel> getMessagesById(@PathVariable Integer id,
@@ -183,6 +184,26 @@ public class MockyController {
 		// return new
 		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
 		return mockyService.getMessagesById(id, page, size);
+	}
+	
+	@GetMapping(value = "/notifications")
+	public ResponseEntity<ResponseBaseModel> getNotifications(@RequestParam("userId") Integer id)
+			throws InterruptedException {
+		log.info(String.valueOf(id));
+		Thread.sleep(SLEEP);
+		// return new
+		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
+		return mockyService.getNotifications();
+	}
+	
+	@GetMapping(value = "/messages/{id}")
+	public ResponseEntity<ResponseBaseModel> getNotificationsById(@PathVariable Integer id,
+			@RequestParam("page") Integer page, @RequestParam("size") Integer size) throws InterruptedException {
+		log.info("getMessagesById " + String.valueOf(id));
+		Thread.sleep(SLEEP);
+		// return new
+		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
+		return mockyService.getNotificationsById(id, page, size);
 	}
 
 	@PostMapping(value = "/settings-main-private-account")

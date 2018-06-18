@@ -15,7 +15,7 @@ import lombok.Data;
 public class Profile {
 	@NotNull
 	@JsonProperty(value = "profile_id")
-	private String userID;
+	private Integer userID;
 
 	@NotNull
 	@JsonProperty(value = "username")
