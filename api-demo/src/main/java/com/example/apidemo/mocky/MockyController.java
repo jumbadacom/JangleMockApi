@@ -48,7 +48,7 @@ public class MockyController {
 	}
 
 	private static final long SLEEP = 500;
-	
+
 	@PostMapping(value = "/login")
 	public ResponseEntity<ResponseBaseModel> login(@Valid @RequestBody LoginModel model) throws InterruptedException {
 		log.info(model.toString());
@@ -166,12 +166,14 @@ public class MockyController {
 		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
 		return new ResponseBaseModel(LanguageMessages.SUCCESFUL).generateInvisible(HttpStatus.OK);
 	}
-	
-	   @PostMapping(value="/register-image-upload" ,consumes = {"multipart/form-data","application/json"})
-	   public ResponseEntity<ResponseBaseModel> uploadImagebyEmail(@RequestPart("model") RegisterImageModel model,@RequestPart("file") MultipartFile uploadfile  ) throws IOException {
+
+	@PostMapping(value = "/register-image-upload", consumes = { "multipart/form-data", "application/json" })
+	public ResponseEntity<ResponseBaseModel> uploadImagebyEmail(@RequestPart("model") RegisterImageModel model,
+			@RequestPart("file") MultipartFile uploadfile) throws IOException {
 		log.info(model.toString());
+		log.info("Uploaded image size: " + uploadfile.getSize());
 		return new ResponseBaseModel(LanguageMessages.SUCCESFUL).generateInvisible(HttpStatus.OK);
-	    }  
+	}
 
 	@GetMapping(value = "/messages")
 	public ResponseEntity<ResponseBaseModel> getMessages(@RequestParam("userId") Integer id)
@@ -182,11 +184,11 @@ public class MockyController {
 		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
 		return mockyService.getMessages();
 	}
-	
+
 	@GetMapping(value = "/messages/{id}")
-	public ResponseEntity<ResponseBaseModel> getMessagesById(@PathVariable Integer id,@RequestParam("page") Integer page,@RequestParam("size") Integer size)
-			throws InterruptedException {
-		log.info("getMessagesById "+String.valueOf(id));
+	public ResponseEntity<ResponseBaseModel> getMessagesById(@PathVariable Integer id,
+			@RequestParam("page") Integer page, @RequestParam("size") Integer size) throws InterruptedException {
+		log.info("getMessagesById " + String.valueOf(id));
 		Thread.sleep(SLEEP);
 		// return new
 		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
