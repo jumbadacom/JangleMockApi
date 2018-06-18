@@ -1,17 +1,23 @@
 package com.example.apidemo.mocky;
 
+import java.io.IOException;
+
 import javax.validation.Valid;
+import javax.websocket.server.PathParam;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.example.apidemo.mocky.request.LoginModel;
 import com.example.apidemo.mocky.request.NewPasswordEmailModel;
@@ -160,6 +166,12 @@ public class MockyController {
 		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
 		return new ResponseBaseModel(LanguageMessages.SUCCESFUL).generateInvisible(HttpStatus.OK);
 	}
+	
+	   @PostMapping(value="/register-image-upload" ,consumes = {"multipart/form-data","application/json"})
+	   public ResponseEntity<ResponseBaseModel> uploadImagebyEmail(@RequestPart("model") RegisterImageModel model,@RequestPart("file") MultipartFile uploadfile  ) throws IOException {
+		log.info(model.toString());
+		return new ResponseBaseModel(LanguageMessages.SUCCESFUL).generateInvisible(HttpStatus.OK);
+	    }  
 
 	@GetMapping(value = "/messages")
 	public ResponseEntity<ResponseBaseModel> getMessages(@RequestParam("userId") Integer id)
@@ -169,6 +181,16 @@ public class MockyController {
 		// return new
 		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
 		return mockyService.getMessages();
+	}
+	
+	@GetMapping(value = "/messages/{id}")
+	public ResponseEntity<ResponseBaseModel> getMessagesById(@PathVariable Integer id,@RequestParam("page") Integer page,@RequestParam("size") Integer size)
+			throws InterruptedException {
+		log.info("getMessagesById "+String.valueOf(id));
+		Thread.sleep(SLEEP);
+		// return new
+		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
+		return mockyService.getMessagesById(id, page, size);
 	}
 
 	@PostMapping(value = "/settings-main-private-account")

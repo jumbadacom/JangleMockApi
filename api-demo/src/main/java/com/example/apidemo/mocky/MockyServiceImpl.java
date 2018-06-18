@@ -23,7 +23,7 @@ public class MockyServiceImpl implements  MockyService {
 		List<Message> messages=new ArrayList<>();
 		for (int i=1;i<16;i++) {
 			Message message=new Message();
-			message.setMessageId(10000+i);
+			message.setMessageId(10010+i);
 			message.setImageURL("http://");
 			message.setTime(i+"s");
 			message.setMessagesCount(0);
@@ -52,4 +52,45 @@ public class MockyServiceImpl implements  MockyService {
 		
 	}
 
+	@Override
+	public ResponseEntity<ResponseBaseModel> getMessagesById(int id, int page, int size) {
+		// TODO Auto-generated method stub
+		MessageResponse response=new MessageResponse(LanguageMessages.SUCCESFUL, Language.EN_US);
+		response.setMessages(generateMessageList(id, page, size));
+		return response.generateInvisible(HttpStatus.OK);
+				
+				
+	}
+
+	
+	private List<Message> generateMessageList(int id, int page, int size) {
+		List<Message> messages=new ArrayList<>();
+		int start=(page-1)*size; 
+		for(int i=start;i<size*page;i++) {
+			Message message=new Message();
+			message.setMessageId(10100+i);
+			message.setImageURL("http://");
+			message.setTime(i+"s");
+			message.setMessagesCount(0);
+			if(i%3==0) {
+				message.setMessageType("TAIL");
+				message.setMessageText("Tamamlama paylaştı");
+				message.setUsername("@user-"+i);
+							}
+			else if(i%3==1) {
+				message.setMessageType("JANGLE");
+				message.setMessageText("Jangle paylaştı");
+				message.setUsername("@username"+i);
+			
+			}
+			else {
+				message.setMessageType("CHAT");
+				message.setMessageText("Deneme mesaj test");
+				message.setUsername("@user_"+i);
+				message.setMessagesCount((int)Math.round(5)+i);
+			}
+			messages.add(message);
+		}
+		return messages;
+	}
 }
