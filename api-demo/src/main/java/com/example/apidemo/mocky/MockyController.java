@@ -157,18 +157,8 @@ public class MockyController {
 		return new ResponseBaseModel(LanguageMessages.SUCCESFUL).generateInvisible(HttpStatus.OK);
 	}
 
-	@PostMapping(value = "/register-image")
-	public ResponseEntity<ResponseBaseModel> registerImage(@Valid @RequestBody RegisterImageModel model)
-			throws InterruptedException {
-		log.info(model.toString());
-		Thread.sleep(SLEEP);
-		// return new
-		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
-		return new ResponseBaseModel(LanguageMessages.SUCCESFUL).generateInvisible(HttpStatus.OK);
-	}
-
 	@PostMapping(value = "/register-image-upload", consumes = { "multipart/form-data", "application/json" })
-	public ResponseEntity<ResponseBaseModel> uploadImagebyEmail(@RequestPart("model") RegisterImageModel model,
+	public ResponseEntity<ResponseBaseModel> uploadProfileImage(@RequestPart("model") RegisterImageModel model,
 			@RequestPart("file") MultipartFile uploadfile) throws IOException {
 		log.info(model.toString());
 		log.info("Uploaded image size: " + uploadfile.getSize());

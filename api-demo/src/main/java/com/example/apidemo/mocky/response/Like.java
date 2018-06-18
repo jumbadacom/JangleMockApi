@@ -12,7 +12,7 @@ public class Like {
 	private String likeID;
 
 	@JsonProperty(value = "user")
-	private User user;
+	private Profile user;
 
 	@JsonProperty(value = "time")
 	private Date time;

@@ -17,7 +17,7 @@ public class Comment {
 	private String commentID;
 	
 	@JsonProperty(value = "user")
-	private User user;
+	private Profile user;
 	
 	@JsonProperty(value = "time")
 	private Date time;

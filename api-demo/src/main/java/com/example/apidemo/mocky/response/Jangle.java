@@ -17,7 +17,7 @@ public class Jangle {
 	private String jangleID;
 
 	@JsonProperty(value = "user")
-	private User user;
+	private Profile user;
 
 	@JsonProperty(value = "jangle_type")
 	private String jangleType;
