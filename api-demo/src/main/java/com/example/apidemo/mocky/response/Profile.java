@@ -43,7 +43,7 @@ public class Profile {
 	private List<Profile> followers;
 
 	@JsonProperty(value = "score")
-	private int score;
+	private Integer score;
 
 	@JsonProperty(value = "is_messaging_enabled")
 	private boolean isMessagingEnabled;
