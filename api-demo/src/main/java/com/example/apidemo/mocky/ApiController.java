@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.apidemo.mocky.request.SampleModel;
 import com.example.apidemo.mocky.request.TokenModel;
 import com.example.apidemo.mocky.response.ResponseBaseModel;
+import com.example.apidemo.mocky.response.TokenResponse;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -22,19 +23,19 @@ public class ApiController {
 
 	private static final long SLEEP = 500;
 
-	
-	// şimdilik NOT_ACCEPTABLE gönderdim. Android tarafında switch(response.status) 'te NOT_ACCEPTABLE durumunu handle edip toast göstereceğim.
+	// şimdilik NOT_ACCEPTABLE gönderdim. Android tarafında switch(response.status)
+	// 'te NOT_ACCEPTABLE durumunu handle edip toast göstereceğim.
 	@PostMapping(value = "/authenticate")
-	public ResponseEntity<String> authenticate(@Valid @RequestBody TokenModel model) throws InterruptedException {
+	public ResponseEntity<TokenResponse> authenticate(@Valid @RequestBody TokenModel model)
+			throws InterruptedException {
 		log.info(model.toString());
 		Thread.sleep(SLEEP);
 
-		if (model.getUsername().equals("admin") && model.getPassword().equals("admin")) {
-			if (model.isRememberMe())
-				return new ResponseEntity<>("AUTH BAŞARILI: TOKEN YARATILDI, REMEMBER ME: TRUE", HttpStatus.OK);
-			else
-				return new ResponseEntity<>("AUTH BAŞARILI: TOKEN YARATILDI, REMEMBER ME: FALSE", HttpStatus.OK);
-		} else
-			return new ResponseEntity<>("AUTH BAŞARISIZ", HttpStatus.NOT_ACCEPTABLE);
+		TokenResponse responseModel = new TokenResponse(
+				"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTUzMTk5MzYzOH0.85_2kmqpQxjicPFvmOYbkRnPhzk3lJtNc6YscQEWfB-XRPpwHwDDiQDY2Nay7QajRzpOCjqE-g36VwAsO1oMWA");
+		;
+
+		return responseModel.authenticate(HttpStatus.OK);
+
 	}
 }
