@@ -2,14 +2,14 @@ package com.example.apidemo.mocky.response;
 
 import javax.validation.constraints.NotNull;
 
-import org.springframework.context.annotation.Profile;
+
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import lombok.Data;
 
-@JsonPropertyOrder({ "message_id", "image_url", "username", "message_type", "message_text", "messages_count", "time" })
+@JsonPropertyOrder({ "message_id", "image_url", "username", "message_type", "message_text", "messages_count", "time","profile" })
 @Data
 public class Message {
 	@NotNull
@@ -27,8 +27,8 @@ public class Message {
 	private Integer messagesCount;
 	@JsonProperty(value = "time")
 	private String time;
-	//@JsonProperty("profile")
-	//private Profile profile;
+	@JsonProperty("profile")
+	private Profile profile;
 	
 	
 }

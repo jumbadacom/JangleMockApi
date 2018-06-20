@@ -8,9 +8,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @JsonPropertyOrder({ "profile_id", "username", "full_name", "profile_description", "profile_picture",
-		"profile_picture_thumbnail", "jangles", "follows", "followers", "score", "is_messaging_enabled" })
+		"profile_picture_thumbnail", "jangle_count", "following_count", "follower_count", "score", "is_messaging_enabled" })
 @Data
 public class Profile {
 	@NotNull
@@ -33,14 +34,14 @@ public class Profile {
 	@JsonProperty(value = "profile_picture_thumbnail")
 	private String profilePictureThumbnail;
 
-	@JsonProperty(value = "jangles")
-	private List<Jangle> jangles;
+	@JsonProperty(value = "jangle_count")
+	private Integer jangles;
 
-	@JsonProperty(value = "follows")
-	private List<Profile> follows;
+	@JsonProperty(value = "following_count")
+	private Integer following;
 
-	@JsonProperty(value = "followers")
-	private List<Profile> followers;
+	@JsonProperty(value = "follower_count")
+	private Integer followers;
 
 	@JsonProperty(value = "score")
 	private Integer score;

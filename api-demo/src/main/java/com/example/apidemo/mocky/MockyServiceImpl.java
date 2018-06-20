@@ -2,6 +2,7 @@ package com.example.apidemo.mocky;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import javax.swing.ListModel;
 
@@ -26,6 +27,7 @@ public class MockyServiceImpl implements MockyService {
 
 		List<Message> messages = new ArrayList<>();
 		for (int i = 1; i < 16; i++) {
+			
 			Message message = new Message();
 			message.setMessageId(10010 + i);
 			message.setImageURL("http://");
@@ -35,6 +37,8 @@ public class MockyServiceImpl implements MockyService {
 				message.setMessageType("TAIL");
 				message.setMessageText("Tamamlama paylaştı");
 				message.setUsername("@user-" + i);
+			
+				
 			} else if (i % 3 == 1) {
 				message.setMessageType("JANGLE");
 				message.setMessageText("Jangle paylaştı");
@@ -46,6 +50,7 @@ public class MockyServiceImpl implements MockyService {
 				message.setUsername("@user_" + i);
 				message.setMessagesCount((int) Math.round(5) + i);
 			}
+		
 			messages.add(message);
 		}
 		MessageResponse response = new MessageResponse(LanguageMessages.SUCCESFUL, Language.EN_US);
@@ -128,10 +133,22 @@ public class MockyServiceImpl implements MockyService {
 			message.setImageURL("http://");
 			message.setTime(i + "s");
 			message.setMessagesCount(0);
+			Profile profile = new Profile();
+			Random random = new Random();
+			profile.setFollowers(1000+random.nextInt(500));
+			profile.setFollowing(10+random.nextInt(90));
+			profile.setScore(2000+random.nextInt(5000));
+			profile.setJangles(0);
+			profile.setMessagingEnabled(i/2==0?true:false);
+			profile.setProfileDescription(i/2==0?null:"sample description ...");
+			profile.setProfilePicture("http://");
+			profile.setProfilePictureThumbnail("http://");
+			profile.setUserID(1000000+i);
 			if (i % 3 == 0) {
 				message.setMessageType("TAIL");
 				message.setMessageText("Tamamlama paylaştı");
 				message.setUsername("@user-" + i);
+				
 			} else if (i % 3 == 1) {
 				message.setMessageType("JANGLE");
 				message.setMessageText("Jangle paylaştı");
@@ -143,6 +160,9 @@ public class MockyServiceImpl implements MockyService {
 				message.setUsername("@user_" + i);
 				message.setMessagesCount((int) Math.round(5) + i);
 			}
+			profile.setUsername(message.getUsername());
+			profile.setFullName(message.getUsername()+" full");
+			message.setProfile(profile);
 			messages.add(message);
 		}
 		return messages;
