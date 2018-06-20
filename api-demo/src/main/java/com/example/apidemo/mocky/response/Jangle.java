@@ -9,27 +9,21 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.Data;
 
-@JsonPropertyOrder({ "jangle_id", "user", "jangle_type", "jangle_time", "likes" })
+@JsonPropertyOrder({ "jangle_id", "user", "jangle_type", "jangle_time", "jangle_thumbnail" })
 @Data
 public class Jangle {
 	@NotNull
 	@JsonProperty(value = "jangle_id")
 	private String jangleID;
 
-	@JsonProperty(value = "user")
-	private User user;
+	@JsonProperty(value = "profile")
+	private Profile profile;
 
 	@JsonProperty(value = "jangle_type")
 	private String jangleType;
 
 	@JsonProperty(value = "jangle_time")
 	private Date jangleTime;
-
-	@JsonProperty(value = "likes")
-	private List<Like> likes;
-
-	@JsonProperty(value = "comments")
-	private List<Comment> comments;
 
 	@JsonProperty(value = "jangle_thumbnail")
 	private String jangleThumbnail;

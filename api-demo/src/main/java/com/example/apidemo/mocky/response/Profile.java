@@ -9,13 +9,13 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import lombok.Data;
 
-@JsonPropertyOrder({ "user_id", "username", "full_name", "profile_description", "profile_picture",
+@JsonPropertyOrder({ "profile_id", "username", "full_name", "profile_description", "profile_picture",
 		"profile_picture_thumbnail", "jangles", "follows", "followers", "score", "is_messaging_enabled" })
 @Data
-public class User {
+public class Profile {
 	@NotNull
-	@JsonProperty(value = "user_id")
-	private String userID;
+	@JsonProperty(value = "profile_id")
+	private Integer userID;
 
 	@NotNull
 	@JsonProperty(value = "username")
@@ -37,13 +37,13 @@ public class User {
 	private List<Jangle> jangles;
 
 	@JsonProperty(value = "follows")
-	private List<User> follows;
+	private List<Profile> follows;
 
 	@JsonProperty(value = "followers")
-	private List<User> followers;
+	private List<Profile> followers;
 
 	@JsonProperty(value = "score")
-	private int score;
+	private Integer score;
 
 	@JsonProperty(value = "is_messaging_enabled")
 	private boolean isMessagingEnabled;

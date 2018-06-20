@@ -13,19 +13,19 @@ import lombok.Data;
 @Data
 public class Message {
 	@NotNull
-	@JsonProperty("message_id")
+	@JsonProperty(value = "message_id")
 	private Integer messageId;
-	@JsonProperty("image_url")
+	@JsonProperty(value = "image_url")
 	private String imageURL;
-	@JsonProperty("username")
+	@JsonProperty(value = "username")
 	private String username;
-	@JsonProperty("message_type")
+	@JsonProperty(value = "message_type")
 	private String messageType;
-	@JsonProperty("message_text")
+	@JsonProperty(value = "message_text")
 	private String messageText;
-	@JsonProperty("messages_count")
+	@JsonProperty(value = "messages_count")
 	private Integer messagesCount;
-	@JsonProperty("time")
+	@JsonProperty(value = "time")
 	private String time;
 	//@JsonProperty("profile")
 	//private Profile profile;

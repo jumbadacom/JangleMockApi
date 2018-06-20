@@ -9,19 +9,17 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
-@JsonPropertyOrder({ "response_code", "response_message", "show_to_user", "response_time", "profile", "is_followed_by_me" })
+@JsonPropertyOrder({ "response_code", "response_message", "show_to_user", "response_time", "notifications" })
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class ProfileSummaryResponse extends ResponseBaseModel {
+public class NotificationResponse extends ResponseBaseModel {
 
-	@JsonProperty(value = "profile")
-	private Profile profile;
+	@JsonProperty("notifications")
+	private List<Notification> notifications = null;
 
-	@JsonProperty(value = "is_followed_by_me")
-	private boolean isFollowedByMe;
-
-	public ProfileSummaryResponse(LanguageMessages languageMessages, Language language) {
+	public NotificationResponse(LanguageMessages languageMessages, Language language) {
 		super(languageMessages, language);
 		// TODO Auto-generated constructor stub
 	}
