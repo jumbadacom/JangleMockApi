@@ -2,6 +2,8 @@ package com.example.apidemo.mocky.response;
 
 import javax.validation.constraints.NotNull;
 
+import org.springframework.context.annotation.Profile;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
@@ -25,4 +27,8 @@ public class Message {
 	private Integer messagesCount;
 	@JsonProperty("time")
 	private String time;
+	//@JsonProperty("profile")
+	//private Profile profile;
+	
+	
 }
