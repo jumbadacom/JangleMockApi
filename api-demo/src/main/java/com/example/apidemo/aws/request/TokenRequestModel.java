@@ -1,4 +1,4 @@
-package com.example.apidemo.mocky.request;
+package com.example.apidemo.aws.request;
 
 import javax.validation.constraints.NotNull;
 
@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @JsonPropertyOrder({ "password", "rememberMe", "username" })
-public class TokenModel {
+public class TokenRequestModel {
 
 	@NotNull
 	@JsonProperty(value = "password")

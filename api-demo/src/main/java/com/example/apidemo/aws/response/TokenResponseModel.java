@@ -1,4 +1,4 @@
-package com.example.apidemo.mocky.response;
+package com.example.apidemo.aws.response;
 
 import java.util.List;
 
@@ -19,14 +19,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class TokenResponse {
+public class TokenResponseModel {
 
 	@JsonProperty("id_token")
 	private String id_token;
 
 	
-	public ResponseEntity<TokenResponse> authenticate(HttpStatus status) {
-		return new ResponseEntity<TokenResponse>(this, status);
+	public ResponseEntity<TokenResponseModel> authenticate(HttpStatus status) {
+		return new ResponseEntity<TokenResponseModel>(this, status);
 	}
 
 }
