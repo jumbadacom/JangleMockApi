@@ -29,4 +29,8 @@ public class ResultVM {
 		return new ResponseEntity<ResultVM>(this, status);
 	}
 
+	public ResponseEntity<ResultVM> isAuthenticated(HttpStatus status) {
+		return new ResponseEntity<ResultVM>(this, status);
+	}
+
 }
