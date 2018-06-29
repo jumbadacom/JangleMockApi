@@ -2,9 +2,9 @@ package com.example.apidemo.aws;
 
 import org.springframework.http.ResponseEntity;
 
-import com.example.apidemo.aws.request.MailStringModel;
+import com.example.apidemo.aws.request.BasicMailModel;
 import com.example.apidemo.aws.request.ManagedUserVM;
-import com.example.apidemo.aws.request.PhoneStringModel;
+import com.example.apidemo.aws.request.BasicPhoneModel;
 import com.example.apidemo.aws.request.TokenRequestModel;
 import com.example.apidemo.aws.response.JWTToken;
 import com.example.apidemo.aws.response.KeyAndShortMessageVM;
@@ -21,9 +21,9 @@ public interface EntryService {
 	 * public ResponseEntity<ResultVM> changePassword(PasswordStringModel model);
 	 */
 
-	public ResponseEntity<ResultVM> checkEmailInUser(MailStringModel model);
+	public ResponseEntity<ResultVM> checkEmailInUser(BasicMailModel model);
 
-	public ResponseEntity<ResultVM> checkPhoneInUser(PhoneStringModel model);
+	public ResponseEntity<ResultVM> checkPhoneInUser(BasicPhoneModel model);
 
 	/*
 	 * Response'u No-content oldugu icin sonra duzenlenecek.
@@ -32,7 +32,7 @@ public interface EntryService {
 	 * model);
 	 */
 
-	public ResponseEntity<KeyAndShortMessageVM> requestPasswordResetBySMS(PhoneStringModel model);
+	public ResponseEntity<KeyAndShortMessageVM> requestPasswordResetBySMS(BasicPhoneModel model);
 
 	/*
 	 * Response (status : 200 icin) nesnesini "key" parametresi olmadigi icin

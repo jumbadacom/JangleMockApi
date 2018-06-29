@@ -12,10 +12,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({ "phone" })
-public class PhoneStringModel {
+@JsonPropertyOrder({ "device_unique", "mail" })
+public class BasicMailModel {
 
-	@JsonProperty("phone")
-	public String phone;
+	@JsonProperty("device_unique")
+	public String deviceUnique;
+
+	@JsonProperty("mail")
+	public String mail;
 
 }

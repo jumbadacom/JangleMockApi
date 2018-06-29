@@ -4,9 +4,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import com.example.apidemo.aws.request.MailStringModel;
+import com.example.apidemo.aws.request.BasicMailModel;
 import com.example.apidemo.aws.request.ManagedUserVM;
-import com.example.apidemo.aws.request.PhoneStringModel;
+import com.example.apidemo.aws.request.BasicPhoneModel;
 import com.example.apidemo.aws.request.TokenRequestModel;
 import com.example.apidemo.aws.response.JWTToken;
 import com.example.apidemo.aws.response.KeyAndShortMessageVM;
@@ -46,7 +46,7 @@ public class EntryServiceImpl implements EntryService {
 	}
 
 	@Override
-	public ResponseEntity<ResultVM> checkEmailInUser(MailStringModel model) {
+	public ResponseEntity<ResultVM> checkEmailInUser(BasicMailModel model) {
 		log.info(model.toString());
 		try {
 			Thread.sleep(SLEEP);
@@ -62,7 +62,7 @@ public class EntryServiceImpl implements EntryService {
 	}
 
 	@Override
-	public ResponseEntity<ResultVM> checkPhoneInUser(PhoneStringModel model) {
+	public ResponseEntity<ResultVM> checkPhoneInUser(BasicPhoneModel model) {
 		log.info(model.toString());
 		try {
 			Thread.sleep(SLEEP);
@@ -77,7 +77,7 @@ public class EntryServiceImpl implements EntryService {
 	}
 
 	@Override
-	public ResponseEntity<KeyAndShortMessageVM> requestPasswordResetBySMS(PhoneStringModel model) {
+	public ResponseEntity<KeyAndShortMessageVM> requestPasswordResetBySMS(BasicPhoneModel model) {
 		log.info(model.toString());
 		try {
 			Thread.sleep(SLEEP);

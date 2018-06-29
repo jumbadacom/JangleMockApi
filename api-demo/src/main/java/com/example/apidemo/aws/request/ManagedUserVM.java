@@ -14,9 +14,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({ "activated", "authorities", "createdBy", "createdDate", "email", "firstName", "hiddenAccount",
-		"image", "imageContentType", "imageUrl", "langKey", "lastModifiedBy", "lastModifiedDate", "lastName", "login",
-		"password", "phone", "supportChat", "uuid" })
+@JsonPropertyOrder({ "activated", "authorities", "created_by", "created_date", "email", "first_name", "hidden_account",
+		"image", "image_content_type", "image_url", "lang_key", "last_modified_by", "last_modified_date", "last_name",
+		"login", "password", "phone", "support_chat", "uuid" })
 public class ManagedUserVM {
 
 	@JsonProperty("activated")
@@ -25,40 +25,40 @@ public class ManagedUserVM {
 	@JsonProperty("authorities")
 	public List<String> authorities = null;
 
-	@JsonProperty("createdBy")
+	@JsonProperty("created_by")
 	public String createdBy;
 
-	@JsonProperty("createdDate")
+	@JsonProperty("created_date")
 	public String createdDate;
 
 	@JsonProperty("email")
 	public String email;
 
-	@JsonProperty("firstName")
+	@JsonProperty("first_name")
 	public String firstName;
 
-	@JsonProperty("hiddenAccount")
+	@JsonProperty("hidden_account")
 	public boolean hiddenAccount;
 
 	@JsonProperty("image")
 	public String image;
 
-	@JsonProperty("imageContentType")
+	@JsonProperty("image_content_type")
 	public String imageContentType;
 
-	@JsonProperty("imageUrl")
+	@JsonProperty("image_url")
 	public String imageUrl;
 
-	@JsonProperty("langKey")
+	@JsonProperty("lang_key")
 	public String langKey;
 
-	@JsonProperty("lastModifiedBy")
+	@JsonProperty("last_modified_by")
 	public String lastModifiedBy;
 
-	@JsonProperty("lastModifiedDate")
+	@JsonProperty("last_modified_date")
 	public String lastModifiedDate;
 
-	@JsonProperty("lastName")
+	@JsonProperty("last_name")
 	public String lastName;
 
 	@JsonProperty("login")
@@ -70,7 +70,7 @@ public class ManagedUserVM {
 	@JsonProperty("phone")
 	public String phone;
 
-	@JsonProperty("supportChat")
+	@JsonProperty("support_chat")
 	public boolean supportChat;
 
 	@JsonProperty("uuid")

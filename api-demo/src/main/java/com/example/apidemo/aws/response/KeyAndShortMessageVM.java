@@ -21,7 +21,7 @@ public class KeyAndShortMessageVM {
 	@JsonProperty("key")
 	public String key;
 
-	@JsonProperty("shortMessage")
+	@JsonProperty("short_message")
 	public String shortMessage;
 
 	public ResponseEntity<KeyAndShortMessageVM> requestPasswordResetBySMS(HttpStatus status) {

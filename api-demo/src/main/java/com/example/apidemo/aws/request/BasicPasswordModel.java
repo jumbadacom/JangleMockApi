@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({ "password" })
-public class PasswordStringModel {
+public class BasicPasswordModel {
 
 	@JsonProperty("password")
 	public String password;

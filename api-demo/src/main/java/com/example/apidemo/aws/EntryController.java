@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.apidemo.aws.request.MailStringModel;
+import com.example.apidemo.aws.request.BasicMailModel;
 import com.example.apidemo.aws.request.ManagedUserVM;
-import com.example.apidemo.aws.request.PhoneStringModel;
+import com.example.apidemo.aws.request.BasicPhoneModel;
 import com.example.apidemo.aws.request.TokenRequestModel;
 import com.example.apidemo.aws.response.JWTToken;
 import com.example.apidemo.aws.response.KeyAndShortMessageVM;
@@ -48,14 +48,14 @@ public class EntryController {
 	 */
 
 	@PostMapping(value = "/account/checkEmailInUser")
-	public ResponseEntity<ResultVM> checkEmailInUser(@Valid @RequestBody MailStringModel model)
+	public ResponseEntity<ResultVM> checkEmailInUser(@Valid @RequestBody BasicMailModel model)
 			throws InterruptedException {
 
 		return service.checkEmailInUser(model);
 	}
 
 	@PostMapping(value = "/account/checkPhoneInUse")
-	public ResponseEntity<ResultVM> checkPhoneInUser(@Valid @RequestBody PhoneStringModel model)
+	public ResponseEntity<ResultVM> checkPhoneInUser(@Valid @RequestBody BasicPhoneModel model)
 			throws InterruptedException {
 
 		return service.checkPhoneInUser(model);
@@ -72,7 +72,7 @@ public class EntryController {
 	 */
 
 	@PostMapping(value = "/reset-passwordBySms/init")
-	public ResponseEntity<KeyAndShortMessageVM> requestPasswordResetBySMS(@Valid @RequestBody PhoneStringModel model)
+	public ResponseEntity<KeyAndShortMessageVM> requestPasswordResetBySMS(@Valid @RequestBody BasicPhoneModel model)
 			throws InterruptedException {
 
 		return service.requestPasswordResetBySMS(model);

@@ -2,7 +2,6 @@ package com.example.apidemo.aws.request;
 
 import javax.validation.constraints.NotNull;
 
-import com.example.apidemo.mocky.Language;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
@@ -13,7 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@JsonPropertyOrder({ "password", "rememberMe", "username" })
+@JsonPropertyOrder({ "password", "remember_me", "username" })
 public class TokenRequestModel {
 
 	@NotNull

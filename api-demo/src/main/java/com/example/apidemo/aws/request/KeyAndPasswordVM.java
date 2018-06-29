@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({ "key", "newPassword", "resetPasswordSms" })
+@JsonPropertyOrder({ "key", "new_password", "reset_password_sms" })
 public class KeyAndPasswordVM {
 
 	@JsonProperty("key")
