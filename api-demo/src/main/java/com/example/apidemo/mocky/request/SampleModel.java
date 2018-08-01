@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 @JsonPropertyOrder({ "email", "confirm_code", "password" })
 public class SampleModel {
 
-	@NotNull
+	
 	@JsonProperty(value = "confirm_code")
 	private Integer confirmCode;
 	@NotBlank

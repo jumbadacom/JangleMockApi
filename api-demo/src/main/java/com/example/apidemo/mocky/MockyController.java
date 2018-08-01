@@ -166,13 +166,13 @@ public class MockyController {
 	}
 
 	@GetMapping(value = "/messages")
-	public ResponseEntity<ResponseBaseModel> getMessages(@RequestParam("userId") Integer id)
+	public ResponseEntity<ResponseBaseModel> getMessages(@RequestParam("page") Integer page)
 			throws InterruptedException {
-		log.info(String.valueOf(id));
+		log.info("messages "+" page: "+page );
 		Thread.sleep(SLEEP);
 		// return new
 		// ResponseBaseModel(LanguageMessages.VALIDATION_EMAIL_INVALID,model.getLanguage()).generateInvisible(HttpStatus.BAD_REQUEST);
-		return mockyService.getMessages();
+		return mockyService.getMessages(page);
 	}
 
 	@GetMapping(value = "/messages/{id}")
